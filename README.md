@@ -7,6 +7,10 @@ Heavily inspired by:
 
 ## Setup
 
+Download the Pytorch C++ LibTorch compatible with your CUDA version from here:
+
+https://pytorch.org/get-started/locally/
+
 Change the `CUDA version` in the `Dockerfile` and build the docker image:
 ```bash
 docker build -f Dockerfile -t torchcpp .
@@ -18,6 +22,15 @@ Enter the docker image
 
 ```bash
 docker run --rm -it --gpus all -v $(pwd):/workspace torchcpp bash
+```
+
+Inside the root directory create a build dir and build the project:
+
+```bash
+mkdir build && cd build
+cmake -DCMAKE_PREFIX_PATH=/absolute/path/to/libtorch ..
+make
+./your_executable
 ```
 
 
