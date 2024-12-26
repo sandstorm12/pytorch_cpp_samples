@@ -7,8 +7,18 @@ Heavily inspired by:
 
 ## Setup
 
+Change the `CUDA version` in the `Dockerfile` and build the docker image:
+```bash
+docker build -f Dockerfile -t torchcpp .
+```
 
 ## Usage
+
+Enter the docker image
+
+```bash
+docker run --rm -it --gpus all -v $(pwd):/workspace torchcpp bash
+```
 
 
 ## TODO
