@@ -1,3 +1,17 @@
+# Checkpoints
+*.pt
+*.pth
+
+# Python
+__pycache__
+
+# Build
+build
+
+# LibTorch
+libtorch/
+*.zip
+
 # Prerequisites
 *.d
 
